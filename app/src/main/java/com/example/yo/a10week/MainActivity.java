@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
         webView = (WebView)findViewById(R.id.webview);
         webView.addJavascriptInterface(new JavaScriptMethods(), "MyApp");
         dialog = new ProgressDialog(this);
-
         setListView();
 
         WebSettings webSettings = webView.getSettings();
@@ -179,8 +178,7 @@ public class MainActivity extends AppCompatActivity {
             handler.post(new Runnable() {
                 @Override
                 public void run() {
-                    list_item.setVisibility(View.VISIBLE);
-                    webView.setVisibility(View.GONE);
+                    linear.setVisibility(View.VISIBLE);
                 }
             });
         }
@@ -232,7 +230,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
                 AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
                 dlg.setTitle("삭제확인");
-                dlg.setMessage("선택한 맛집을 정말 삭제하시겠습니까?");
+                dlg.setMessage("선택한 사이트를 정말 삭제하시겠습니까?");
                 dlg.setNegativeButton("닫기", null);
                 dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                     @Override
